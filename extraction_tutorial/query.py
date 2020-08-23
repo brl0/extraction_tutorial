@@ -1,5 +1,5 @@
 import pprint
-import extraction_tutorial.schema
+import schema
 
 
 def query_url(url):
@@ -12,7 +12,7 @@ def query_url(url):
       }
     }
     """
-    result = extraction_tutorial.schema.schema.execute(q)
+    result = schema.schema.execute(q)
     if result.errors:
         if len(result.errors) == 1:
             raise Exception(result.errors[0])

@@ -1,8 +1,9 @@
 import requests
-
+import json
+from pprint import pprint
 
 q = """
-{ 
+{
   website(url: "https://lethain.com/migrations") {
     title
     image
@@ -11,6 +12,6 @@ q = """
 }
 """
 
-
 resp = requests.post("http://localhost:5000/", params={'query': q})
-print(resp.text)
+obj = json.loads(resp.text)
+pprint(obj)
